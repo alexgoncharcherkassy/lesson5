@@ -8,9 +8,20 @@
 
 namespace Entity\Auto;
 
+/**
+ * Class AbstractAuto
+ * @package Entity\Auto
+ */
 abstract class AbstractAuto
 {
+    /**
+     * @return mixed
+     */
     abstract function getCode();
+
+    /**
+     * @return mixed
+     */
     abstract function getPrice();
 
 }
