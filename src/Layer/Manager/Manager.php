@@ -318,3 +318,4 @@ class Manager extends AbstractManager implements ConnectorInterface
         $this->connectClose();
     }
 }
+
