@@ -8,7 +8,14 @@
 
 namespace Entity\Auto;
 
+/**
+ * Interface getVarsInterface
+ * @package Entity\Auto
+ */
 interface getVarsInterface
 {
+    /**
+     * @return mixed
+     */
     public function getVars();
 }
