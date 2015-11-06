@@ -39,30 +39,16 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
 
     }
 
-    /*public function testSql()
+    public function testFind()
     {
-        $mock = $this->getMockBuilder('Layer\Manager\Manager')->getMock();
-        $mock->method('sql')->willReturn(array('id' => 5));
-   //     $this->assertEquals('5', $mock->sql());
-
-        $vars = new Manager();
-        $this->assertEquals('5', $vars->find(array('class' => 'Autos', 'price' => 5)));
-    }*/
-
-    /**
-     * @dataProvider findProvider
-     */
-    /*public function testFind($testEntity, $entityName)
-    {
-        $mock = $this->getMock('Layer\Manager\Manager', array('sql'));
+        $mock = $this->getMock('Layer\Manager\Manager');
         $mock->expects($this->once())
-            ->method('sql')
-            ->will($this->returnValue($entityName));
-        $find = new Manager();
-        $w = $find->find($mock);
-        $this->assertEquals($testEntity, $w);
-      //  $this->assertEquals($testEntity, $find->find($entityName));
-    }*/
+            ->method('find')
+            ->will($this->returnValue(array('id' => 5)));
+        $res = $mock->find(array('class' => 'Autos', 'price' => 5));
+        $this->assertEquals(array('id' => 5), $res);
+    }
+
 
     /**
      * @return array
@@ -81,16 +67,6 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
 
         ];
     }
-
-    /*public function findProvider()
-    {
-        return [
-            [
-                72,
-                ['id' => 72]
-            ],
-
-        ];
-    }*/
+    
 }
 
