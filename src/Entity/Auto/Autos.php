@@ -58,3 +58,4 @@ class Autos extends AbstractAuto implements getVarsInterface
     }
 
 }
+

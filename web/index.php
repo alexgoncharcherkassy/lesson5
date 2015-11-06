@@ -79,7 +79,7 @@ $manager->connect($config);
         <input type="submit" value="Save">
     </form>
     <?php
-    $car = new Cars($_POST['cadecars'], $_POST['pricecars']);
+    $car = new Cars($_POST['codecars'], $_POST['pricecars']);
     $car->setModel($_POST['model']);
     $car->setColor($_POST['color']);
     $car->setCapacity($_POST['capacity']);

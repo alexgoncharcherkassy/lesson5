@@ -82,7 +82,7 @@ class Manager extends AbstractManager implements ConnectorInterface
      * @param mixed $entity
      * @return mixed
      */
-    private function analysisVars($entity)
+    public function analysisVars($entity)
     {
         $arrVal = array();
         $arrKey = array();
@@ -170,14 +170,20 @@ class Manager extends AbstractManager implements ConnectorInterface
         $key = $vars['arrKey'][0];
         $value = $vars['arrVal'][0];
         $sql = "SELECT id FROM $table WHERE $key = ?";
+        $row = $this->sql($sql, $value);
+    //    while ($row) {
+            $result = $row['id'];
+     //   }
+
+        return $result;
+    }
+
+    public function sql($sql, $value)
+    {
         $stm = $this->db->prepare($sql);
         $stm->bindParam(1, $value);
         $stm->execute();
-        while ($row = $stm->fetch()) {
-            $result = $row['id'];
-        }
-
-        return $result;
+        return $stm->fetch();
     }
 
     /**
