@@ -118,8 +118,8 @@ class Manager extends AbstractManager implements ConnectorInterface
         for ($y = 0; $y < $count; $y++) {
             $stm->bindParam($y + 1, $vars['arrVal'][$y]);
         }
-        $stm->execute();
-        return;
+
+        return $stm->execute();
     }
 
     /**
@@ -138,7 +138,8 @@ class Manager extends AbstractManager implements ConnectorInterface
         $stm = $this->db->prepare($sql);
         $stm->bindParam(1, $value);
         $stm->bindParam(2, $id);
-        $stm->execute();
+
+        return $stm->execute();
     }
 
     /**
@@ -154,7 +155,8 @@ class Manager extends AbstractManager implements ConnectorInterface
         $sql = "DELETE FROM $table WHERE id = ?";
         $stm = $this->db->prepare($sql);
         $stm->bindParam(1, $id);
-        $stm->execute();
+
+        return $stm->execute();
 
     }
 
@@ -171,18 +173,22 @@ class Manager extends AbstractManager implements ConnectorInterface
         $value = $vars['arrVal'][0];
         $sql = "SELECT id FROM $table WHERE $key = ?";
         $row = $this->sql($sql, $value);
-    //    while ($row) {
-            $result = $row['id'];
-     //   }
+        $result = $row['id'];
 
         return $result;
     }
 
+    /**
+     * @param $sql
+     * @param $value
+     * @return mixed
+     */
     public function sql($sql, $value)
     {
         $stm = $this->db->prepare($sql);
         $stm->bindParam(1, $value);
         $stm->execute();
+
         return $stm->fetch();
     }
 

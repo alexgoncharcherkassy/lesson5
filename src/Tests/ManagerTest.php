@@ -28,6 +28,9 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     *
+     */
     public function testGetVars()
     {
         $vars = new Autos('123', '100');
@@ -39,6 +42,9 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     *
+     */
     public function testFind()
     {
         $mock = $this->getMock('Layer\Manager\Manager');
@@ -49,6 +55,44 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(array('id' => 5), $res);
     }
 
+    /**
+     *
+     */
+    public function testInsert()
+    {
+        $mock = $this->getMock('Layer\Manager\Manager');
+        $mock->expects($this->once())
+            ->method('insert')
+            ->will(($this->returnValue(('true'))));
+        $mock->insert(array('class' => 'Autos', 'code' => 100, 'price' => 2300));
+        $this->assertTrue(true);
+    }
+
+    /**
+     *
+     */
+    public function testUpdate()
+    {
+        $mock = $this->getMock('Layer\Manager\Manager');
+        $mock->expects($this->once())
+            ->method('update')
+            ->will(($this->returnValue(('true'))));
+        $mock->update(array('class' => 'Autos', 'id' => 5, 'code' => 'THIS_UPDATE'));
+        $this->assertTrue(true);
+    }
+
+    /**
+     *
+     */
+    public function testRemove()
+    {
+        $mock = $this->getMock('Layer\Manager\Manager');
+        $mock->expects($this->once())
+            ->method('remove')
+            ->will(($this->returnValue(('true'))));
+        $mock->remove(array('class' => 'Autos', 'id' => 5));
+        $this->assertTrue(true);
+    }
 
     /**
      * @return array
@@ -67,6 +111,6 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
 
         ];
     }
-    
+
 }
 
