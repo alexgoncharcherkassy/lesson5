@@ -68,3 +68,4 @@ class Clients implements getVarsInterface
         return $arr;
     }
 }
+

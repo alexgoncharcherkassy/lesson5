@@ -31,20 +31,6 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
     /**
      *
      */
-    public function testGetVars()
-    {
-        $vars = new Autos('123', '100');
-        $arr = $vars->getVars();
-        $this->assertArrayHasKey('class', $vars->getVars());
-        $this->assertContains('123', $arr);
-        $this->assertCount(3, $arr);
-        $this->assertClassHasAttribute('price', 'Entity\Auto\Autos');
-
-    }
-
-    /**
-     *
-     */
     public function testFind()
     {
         $mock = $this->getMock('Layer\Manager\Manager');

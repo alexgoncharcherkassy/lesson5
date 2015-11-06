@@ -11,7 +11,6 @@
     "autoload": {
         "psr-4": {
             "Layer\\": "src/Layer/",
-            "Tests\\": "src/Tests/",
             "Entity\\": "src/Entity/"
         }
     },
