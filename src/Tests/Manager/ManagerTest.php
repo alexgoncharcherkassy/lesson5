@@ -91,8 +91,8 @@ class ManagerTest extends \PHPUnit_Framework_TestCase
                 ['class' => 'Autos', 'code' => 123, 'price' => 100]
             ],
             [
-                ['table' => 'Autos', 'arrKey' => ['code', 'price'], 'arrVal' => [123, 100]],
-                ['class' => 'Autos', 'code' => 123, 'price' => 100]
+                ['table' => 'Clients', 'arrKey' => ['firstName', 'lastName', 'contacts'], 'arrVal' => ['nick', 'oder', 665577]],
+                ['class' => 'Clients', 'firstName' => 'nick', 'lastName' => 'oder', 'contacts' => 665577]
             ]
 
         ];
