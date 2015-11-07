@@ -1,28 +1,27 @@
 {
-    "name": "geekhub/lesson3",
-    "description": "Geekhub AdvancedPHP 2015 HW#4",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Aleksandr Gonchar",
-            "email": "shuric2005@mail.ru"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Layer\\": "src/Layer/",
-            "Entity\\": "src/Entity/"
-        }
-    },
-    "minimum-stability": "stable",
-    "require-dev": {
-        "phpunit/phpunit": "^4.8"
-    },
-    "require": {
-        "php": ">=5.5.0"
-
-    },
-    "config": {
-        "bin-dir":"bin"
+  "name": "geekhub/lesson3",
+  "description": "Geekhub AdvancedPHP 2015 HW#4",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Aleksandr Gonchar",
+      "email": "shuric2005@mail.ru"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Layer\\": "src/Layer/",
+      "Entity\\": "src/Entity/"
+    }
+  },
+  "minimum-stability": "stable",
+  "require-dev": {
+    "phpunit/phpunit": "^4.8"
+  },
+  "require": {
+    "php": ">=5.5.0"
+  },
+  "config": {
+    "bin-dir": "bin"
+  }
 }
