@@ -6,7 +6,7 @@
  * Time: 13:55
  */
 
-namespace Tests;
+namespace Tests\Manager;
 
 use Entity\Auto\Autos;
 use Layer\Manager\Manager;

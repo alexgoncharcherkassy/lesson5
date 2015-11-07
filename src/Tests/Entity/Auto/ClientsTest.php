@@ -6,7 +6,7 @@
  * Time: 20:38
  */
 
-namespace Tests;
+namespace Tests\Entity\Auto;
 
 use Entity\Auto\Clients;
 

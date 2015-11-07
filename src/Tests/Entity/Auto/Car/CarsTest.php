@@ -6,7 +6,7 @@
  * Time: 20:42
  */
 
-namespace Tests;
+namespace Tests\Entity\Auto\Car;
 
 use Entity\Auto\Car\Cars;
 
